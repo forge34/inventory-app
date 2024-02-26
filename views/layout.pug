@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Inventory app
+    link(rel='stylesheet', href='/stylesheets/main.css')
+  body.main-container
+
+    .sidebar
+      h1 Inventory app
+      h3
+        img(src="svg/list.svg").icon
+        a(href="/categories") Category list
+      h3
+        img(src="svg/list.svg").icon
+        a(href="/items") Item list
+    block content

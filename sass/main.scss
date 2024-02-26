@@ -1,0 +1,44 @@
+@use 'variables';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+form {
+    all:unset
+}
+
+body {
+    height: 100%;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 15dvw 85dvw;
+    grid-template-rows: 100dvh;
+    background-color: variables.$bg;
+}
+
+.sidebar {
+    background-color: variables.$dark-gray;
+    color: white;
+    padding: variables.$m;
+}
+
+.sidebar > h3 {
+    margin: variables.$l 0;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    filter: invert(100%);
+    vertical-align: middle;
+}
