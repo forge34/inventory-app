@@ -1,0 +1,23 @@
+@use "variables";
+
+@each $key,$val in variables.$sizes{
+    .pd-#{$key} {
+        padding: variables.$base * $val;
+    }
+
+    .mg-#{$key} {
+        margin: variables.$base * $val;
+    }
+
+    .mg-tb-#{$key} {
+        margin: variables.$base * $val 0;
+    }
+
+    .mg-inl-#{$key} {
+        margin-inline: variables.$base * $val ;
+    }
+}
+
+.push-l {
+    margin-left: auto;
+}

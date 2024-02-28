@@ -12,7 +12,7 @@ const itemSchema = new Schema({
 })
 
 itemSchema.virtual('url').get(function(){
-    return `/item/${this._id}`
+    return `/items/${this._id}`
 })
 
 module.exports = mongoose.model("items" , itemSchema)

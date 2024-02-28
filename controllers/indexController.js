@@ -3,9 +3,9 @@ const Items = require("../models/itemModel")
 
 
 const index = expressAsyncHandler( async(req,res,next)=> {
-    const items = await Items.find().exec()
+    const items = await Items.find().where("sold").gte(50).exec()
 
-    res.render("index" , {items:items})
+    res.render("itemsList", { items: items });
 })
 
 module.exports = {
