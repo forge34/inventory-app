@@ -1,6 +1,6 @@
 const express = require("express");
 const { index } = require("../controllers/indexController");
-const { itemList, itemPage } = require("../controllers/itemController");
+const { itemList, itemPage, itemDelete } = require("../controllers/itemController");
 const router = express.Router();
 
 /* GET home page. */
@@ -11,7 +11,7 @@ router.get("/", index);
 router.get("/items" , itemList);
 router.get("/items/:item" ,itemPage);
 router.get("/items/:item/update");
-router.get("/items/:item/delete");
+router.post("/items/:item/delete" , itemDelete);
 router.get("/items/create");
 
 

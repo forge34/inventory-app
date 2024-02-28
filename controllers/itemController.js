@@ -15,7 +15,16 @@ const itemPage = expressAsyncHandler(async(req,res,next) => {
     res.render("itemPage" , {item:item})
 })
 
+const itemDelete = expressAsyncHandler(async(req,res,next) => {
+    const id = req.params.item
+
+    await Items.deleteOne().where("_id").equals(id).exec()
+
+    res.redirect("/")
+})
+
 module.exports = {
     itemList,
-    itemPage
+    itemPage,
+    itemDelete
 }
