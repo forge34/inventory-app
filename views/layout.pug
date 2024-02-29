@@ -2,22 +2,21 @@ doctype html
 html
   head
     title Inventory app
-    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel="stylesheet", href="/stylesheets/main.css")
   body.main-container
-
     .sidebar.pd-l
       h1 Inventory app
       h3.mg-tb-m
-        img(src="/svg/list.svg").icon.mg-inl-s
+        img.icon.mg-inl-s(src="/svg/list.svg")
         a(href="/categories") Category list
       h3.mg-tb-m
-        img(src="/svg/list.svg").icon.mg-inl-s
+        img.icon.mg-inl-s(src="/svg/list.svg")
         a(href="/items") Item list
 
     .top
-      input(type="search" placeholder="Search inventory").search-bar.mg-m.pd-s
+      input.search-bar.mg-m.pd-s(type="search", placeholder="Search inventory")
 
       .user.push-l.mg-inl-m
-        img(src="https://placehold.co/85x85/png").mg-s
+        img.mg-s(src="https://placehold.co/85x85/png")
         h3 Inventory Manager
     block content

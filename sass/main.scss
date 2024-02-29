@@ -3,116 +3,143 @@
 @import "button";
 
 * {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 form {
-  all: unset;
+	all: unset;
 }
 
 body {
-  height: 100%;
+	height: 100%;
 }
 
 .main-container {
-  display: grid;
-  grid-template-columns: 15dvw 85dvw;
-  grid-template-rows: 20dvh 80dvh;
-  background-color: variables.$bg;
+	display: grid;
+	grid-template-columns: 15dvw 85dvw;
+	grid-template-rows: 20dvh 80dvh;
+	background-color: variables.$bg;
 }
 
 .sidebar {
-  background-color: variables.$dark-gray;
-  color: white;
-  grid-row: 1/ -1;
+	background-color: variables.$dark-gray;
+	color: white;
+	grid-row: 1/ -1;
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 2px;
-  filter: invert(100%);
-  vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	margin-right: 2px;
+	filter: invert(100%);
+	vertical-align: middle;
 }
 
 .item-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  text-align: left;
-  border-radius: 12px;
-  grid-row: 2 / -1;
-  grid-column: 2 / -1;
+	table-layout: fixed;
+	border-collapse: collapse;
+	text-align: left;
+	border-radius: 12px;
+	grid-row: 2 / -1;
+	grid-column: 2 / -1;
 
-  overflow-y: auto;
+	overflow-y: auto;
 
-  thead {
-    border-radius: 12px;
-    background-color: variables.$light-green;
-  }
+	thead {
+		border-radius: 12px;
+		background-color: variables.$light-green;
+	}
 
-  th {
-    font-weight: bold;
-  }
+	th {
+		font-weight: bold;
+	}
 
-  td {
-    font-size: 1.1rem;
-  }
+	td {
+		font-size: 1.1rem;
+	}
 }
 
 .top {
-  display: flex;
-  width: 100%;
+	display: flex;
+	width: 100%;
 }
 
 .search-bar {
-  font-size: 1.1rem;
-  border-radius: 6px;
-  align-self: flex-start;
-  min-width: max(120px, 60%);
+	font-size: 1.1rem;
+	border-radius: 6px;
+	align-self: flex-start;
+	min-width: max(120px, 60%);
 }
 
 .user {
-  display: flex;
-  height: max-content;
+	display: flex;
+	height: max-content;
 
-  img {
-    border-radius: 50%;
-    width: 85px;
-    height: 85px;
-  }
+	img {
+		border-radius: 50%;
+		width: 85px;
+		height: 85px;
+	}
 
-  h3 {
-    align-self: center;
-  }
+	h3 {
+		align-self: center;
+	}
 }
 
 .item-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;
-  background-color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100%;
+	background-color: white;
 
-  img {
-    width: 90%;
-    height: auto;
-  }
+	img {
+		width: 90%;
+		height: auto;
+	}
 }
 
 .submit-btn {
-  @include btn(1rem);
-  border-color: variables.$light-green;
-  border-radius: 7px;
-  background-color: white;
-  transition: all 0.4s ease-in-out 0.1s;
+	@include btn();
+	border-color: variables.$light-green;
+	border-radius: 7px;
+	border-width: 1px;
+	background-color: white;
+	transition: all 0.4s ease-in-out 0.1s;
 }
 
 .submit-btn:hover {
-  background-color: variables.$light-green;
-  color: black;
+	background-color: variables.$light-green;
+	color: black;
+}
+
+.buttons {
+	display: flex;
+
+  a {
+    display: inline-block;
+    border-style: solid;
+  }
+}
+.form {
+	background-color: variables.$light-gray;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+
+	input,
+	label {
+		font-size: inherit;
+	}
+
+	input {
+		align-self: flex-start;
+	}
 }

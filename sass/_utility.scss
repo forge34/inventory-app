@@ -1,23 +1,27 @@
 @use "variables";
 
-@each $key,$val in variables.$sizes{
-    .pd-#{$key} {
-        padding: variables.$base * $val;
-    }
+@each $key, $val in variables.$sizes {
+	.pd-#{$key} {
+		padding: variables.$base * $val;
+	}
 
-    .mg-#{$key} {
-        margin: variables.$base * $val;
-    }
+	.mg-#{$key} {
+		margin: variables.$base * $val;
+	}
 
-    .mg-tb-#{$key} {
-        margin: variables.$base * $val 0;
-    }
+	.mg-tb-#{$key} {
+		margin: variables.$base * $val 0;
+	}
 
-    .mg-inl-#{$key} {
-        margin-inline: variables.$base * $val ;
-    }
+	.mg-inl-#{$key} {
+		margin-inline: variables.$base * $val;
+	}
+
+	.font-#{$key} {
+		font-size: variables.$base * $val;
+	}
 }
 
 .push-l {
-    margin-left: auto;
+	margin-left: auto;
 }

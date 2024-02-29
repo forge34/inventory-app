@@ -5,14 +5,13 @@ block content
     img(src="https://placehold.co/400x400/png")
 
     .info
-        h1 #{item.name}
-        h2.mg-tb-s #{item.price}$
-        h2.mg-tb-m Sold amount : #{item.sold} pcs
-        h2.mg-tb-m Amount in stock : #{item.stock} pcs
+      h1 #{ item.name }
+      h2.mg-tb-s #{ item.price }$
+      h2.mg-tb-m Sold amount : #{ item.sold } pcs
+      h2.mg-tb-m Amount in stock : #{ item.stock } pcs
 
-        .form
-            form(action=item.url + "/update" method="GET")
-                button(type="submit").submit-btn.mg-inl-m Edit
+      .buttons
+        a.submit-btn.mg-inl-m(href=item.url + "/update") Edit
 
-            form(action=item.url + "/delete" method="POST")
-                button(type="submit").submit-btn Delete
+        form(action=item.url + "/delete", method="POST")
+          button.submit-btn(type="submit") Delete

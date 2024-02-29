@@ -1,18 +1,18 @@
 extends layout
 
 block content
-    table.item-table
-        thead 
-            th.pd-s ITEM NAME
-            th.pd-s ITEM CATEGORY
-            th.pd-s ITEM PRICE
-            th.pd-s ITEM STOCK
-            th.pd-s ITEM SOLD AMOUNT
-        each item in items
-            tr.mg-inl-m
-                td 
-                    a(href=item.url) #{item.name}
-                td #{item.category}
-                td #{item.price}
-                td #{item.stock}
-                td #{item.sold}               
+  table.item-table
+    thead
+      th.pd-s ITEM NAME
+      th.pd-s ITEM CATEGORY
+      th.pd-s ITEM PRICE
+      th.pd-s ITEM STOCK
+      th.pd-s ITEM SOLD AMOUNT
+    each item in items
+      tr.mg-inl-m
+        td
+          a(href=item.url) #{ item.name }
+        td #{ item.category }
+        td #{ item.price }
+        td #{ item.stock }
+        td #{ item.sold } 

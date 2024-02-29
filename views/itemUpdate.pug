@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    form(method="POST").form.pd-m
+        .input.font-l
+            label(for="name").mg-tb-m Enter Item name
+            input(type="text" name="name")
+        .input.font-l
+            label(for="price").mg-tb-m Enter Item Price
+            input(type="text" name="price")
+
+        button.submit-btn.font-l.mg-tb-m Submit edits

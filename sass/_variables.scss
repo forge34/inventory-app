@@ -1,7 +1,10 @@
+@use 'sass:color';
+
+
 $dark-gray: #3b3c40;
 $light-green: #baf241;
 $bg: #f2f2f2;
-$light-gray: lighten($dark-gray, 5);
+$light-gray:  color.scale($dark-gray , $lightness:75%);
 
 $base: 0.5em;
 
