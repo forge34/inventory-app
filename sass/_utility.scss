@@ -18,7 +18,7 @@
 	}
 
 	.font-#{$key} {
-		font-size: variables.$base * $val;
+		font-size: variables.$base-font * ($val * 0.75);
 	}
 }
 

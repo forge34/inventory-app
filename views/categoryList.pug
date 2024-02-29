@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    .category-container.pd-xl.mg-tb-l
+        h1.mg-tb-m Category List
+        ul
+            each val in categories
+                li.font-m
+                    a(href=val.url) #{val.name}

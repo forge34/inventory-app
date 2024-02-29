@@ -15,7 +15,7 @@
 }
 
 .font-s {
-  font-size: 0.5em;
+  font-size: 0.75em;
 }
 
 .pd-m {
@@ -35,7 +35,7 @@
 }
 
 .font-m {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .pd-l {
@@ -55,7 +55,7 @@
 }
 
 .font-l {
-  font-size: 1.5em;
+  font-size: 2.25em;
 }
 
 .pd-xl {
@@ -75,7 +75,7 @@
 }
 
 .font-xl {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .push-l {
@@ -221,6 +221,12 @@ body {
 .radio input,
 .radio label {
   font-size: inherit;
+}
+
+.category-container {
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+  background-color: #cdcdd1;
 }
 
 /*# sourceMappingURL=main.css.map */
