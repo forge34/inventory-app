@@ -143,3 +143,11 @@ body {
 		align-self: flex-start;
 	}
 }
+
+.radio {
+  display: flex;
+  input,
+	label {
+		font-size: inherit;
+	}
+}

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    form(method="POST").form.pd-m
+        .input.font-l
+            label(for="name").mg-tb-m Enter Item name
+            input(type="text" name="name")
+        .input.font-l
+            label(for="price").mg-tb-m Enter Item Price
+            input(type="text" name="price")
+
+        .input.font-l
+            label(for="stock").mg-tb-m Enter amount in stock
+            input(type="text" name="stock")
+
+        h2.mg-tb-l Select item categories
+
+        each val in categories
+            .radio.font-l.row
+                input(type="radio" name="category" value=val.name)
+                label(for="category").mg-tb-s.mg-inl-s #{val.name}
+
+
+        button.submit-btn.font-l.mg-tb-m Create

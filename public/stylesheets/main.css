@@ -215,4 +215,12 @@ body {
   align-self: flex-start;
 }
 
+.radio {
+  display: flex;
+}
+.radio input,
+.radio label {
+  font-size: inherit;
+}
+
 /*# sourceMappingURL=main.css.map */
