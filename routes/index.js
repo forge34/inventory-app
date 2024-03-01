@@ -1,7 +1,7 @@
 const express = require("express");
 const { index } = require("../controllers/indexController");
 const { itemList, itemPage, itemDelete, itemUpdateGet, itemUpdatePost, itemCreateGet, itemCreatePost } = require("../controllers/itemController");
-const { categoryList, categoryPage } = require("../controllers/categoryController");
+const { categoryList, categoryPage, categoryDelete, categoryUpdateGet, categoryUpdatePost } = require("../controllers/categoryController");
 const router = express.Router();
 
 /* GET home page. */
@@ -21,8 +21,10 @@ router.post("/items/:item/delete" , itemDelete);
 router.get("/categories" ,categoryList)
 router.get("/categories/:category" ,categoryPage)
 router.get("/categories/create")
-router.get("/categories/:category/delete")
-router.get("/categories/:category/update")
+router.post("/categories/create");
+router.post("/categories/:category/delete" , categoryDelete)
+router.get("/categories/:category/update",categoryUpdateGet)
+router.post("/categories/:category/update",categoryUpdatePost);
 
 
 module.exports = router;

@@ -10,19 +10,66 @@ const categoryList = expressAsyncHandler(async (req, res, next) => {
 });
 
 const categoryPage = expressAsyncHandler(async (req, res, next) => {
-    const name = req.params.category
-	const items = await Items
-		.find()
-		.where("category")
-		.equals(name)
-		.exec();
+	const id = req.params.category;
 
-    const category = await Categories.findOne().where("name").equals(name)
+	const c = await Categories.findOne().where("_id").equals(id).exec();
 
-    res.render("categoryPage" , {items:items , category:category})
+	const items = await Items.find().where("category").equals(c.name).exec();
+
+	const category = await Categories.findOne().where("_id").equals(id);
+
+	res.render("categoryPage", { items: items, category: category });
 });
+
+const categoryDelete = expressAsyncHandler(async (req, res, next) => {
+	const id = req.params.category;
+	const category = await Categories.findOne().where("_id").equals(id).exec();
+
+
+	await Items.deleteMany({ category: id });
+	await Categories.deleteOne({ name: category.name});
+
+	res.redirect("/categories");
+});
+
+const categoryUpdateGet = expressAsyncHandler(async (req, res, next) => {
+	res.render("categoryUpdate");
+});
+
+const categoryUpdatePost = [
+	body("name").trim().isLength({ min: 1 }).escape(),
+	body("name").trim().isLength({ min: 1 }).escape(),
+
+	expressAsyncHandler(async (req, res, next) => {
+		const errors = validationResult(req);
+		const name = req.body.name;
+		const desc = req.body.description;
+		const id = req.params.category;
+		const category = await Categories.findOne().where("_id").equals(id).exec();
+
+
+		if (errors.isEmpty()) {
+			const newCategory = await Categories.findOne().where("name").equals(category.name)
+				.exec();
+
+			await Items.find().where("category").equals(category.name).updateMany({} ,{category:name}).exec()
+
+
+			newCategory.name = name;
+			newCategory.description = desc;
+
+			await newCategory.save();
+		}
+		const url = req.url.split("update").join().replace
+		(",","");
+		res.redirect(url);
+	}),
+];
 
 module.exports = {
 	categoryList,
-    categoryPage
+	categoryPage,
+	categoryDelete,
+	categoryUpdateGet,
+	categoryUpdatePost
 };
