@@ -47,6 +47,7 @@ const categoryUpdatePost = [
 		const id = req.params.category;
 		const category = await Categories.findOne().where("_id").equals(id).exec();
 
+		const url = category.url
 
 		if (errors.isEmpty()) {
 			const newCategory = await Categories.findOne().where("name").equals(category.name)
@@ -60,16 +61,42 @@ const categoryUpdatePost = [
 
 			await newCategory.save();
 		}
-		const url = req.url.split("update").join().replace
-		(",","");
+
 		res.redirect(url);
 	}),
 ];
+
+
+const categoryCreateGet = expressAsyncHandler(async(req,res,next)=>{ 
+	res.render("categoryCreate")
+})
+
+const categoryCreatePost = [
+	body("name").trim().isLength({ min: 1 }).escape(),
+	body("description").trim().isLength({ min: 1 }).escape(),
+
+	expressAsyncHandler(async(req,res,next)=>{
+		const errors = validationResult(req,)
+
+		if (errors.isEmpty()){
+			const category = new Categories({name:req.body.name ,description:req.body.description})
+
+			await category.save()
+			
+			res.redirect(category.url);
+
+		}
+
+	})
+];
+
 
 module.exports = {
 	categoryList,
 	categoryPage,
 	categoryDelete,
 	categoryUpdateGet,
-	categoryUpdatePost
+	categoryUpdatePost,
+	categoryCreateGet,
+	categoryCreatePost
 };

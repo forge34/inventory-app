@@ -1,7 +1,7 @@
 const express = require("express");
 const { index } = require("../controllers/indexController");
 const { itemList, itemPage, itemDelete, itemUpdateGet, itemUpdatePost, itemCreateGet, itemCreatePost } = require("../controllers/itemController");
-const { categoryList, categoryPage, categoryDelete, categoryUpdateGet, categoryUpdatePost } = require("../controllers/categoryController");
+const { categoryList, categoryPage, categoryDelete, categoryUpdateGet, categoryUpdatePost, categoryCreateGet, categoryCreatePost } = require("../controllers/categoryController");
 const router = express.Router();
 
 /* GET home page. */
@@ -19,9 +19,9 @@ router.post("/items/:item/delete" , itemDelete);
 
 /* Category routes */
 router.get("/categories" ,categoryList)
+router.get("/categories/create", categoryCreateGet);
+router.post("/categories/create", categoryCreatePost);
 router.get("/categories/:category" ,categoryPage)
-router.get("/categories/create")
-router.post("/categories/create");
 router.post("/categories/:category/delete" , categoryDelete)
 router.get("/categories/:category/update",categoryUpdateGet)
 router.post("/categories/:category/update",categoryUpdatePost);

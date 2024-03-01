@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    form(method="POST").form.pd-m
+        .input.font-l
+            label(for="name").mg-tb-m Enter Category name
+            input(type="text" name="name")
+        .input.font-l
+            label(for="price").mg-tb-m Enter Category Description
+            input(type="text" name="description")
+
+        button.submit-btn.font-l.mg-tb-m Create Category
