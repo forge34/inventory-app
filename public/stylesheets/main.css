@@ -15,7 +15,7 @@
 }
 
 .font-s {
-  font-size: 0.75em;
+  font-size: 0.75rem;
 }
 
 .pd-m {
@@ -35,7 +35,7 @@
 }
 
 .font-m {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .pd-l {
@@ -55,7 +55,7 @@
 }
 
 .font-l {
-  font-size: 2.25em;
+  font-size: 2.25rem;
 }
 
 .pd-xl {
@@ -75,16 +75,29 @@
 }
 
 .font-xl {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .push-l {
   margin-left: auto;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.ovf-scroll-y {
+  overflow-y: scroll;
+}
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -103,7 +116,7 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: 15dvw 85dvw;
-  grid-template-rows: 20dvh 80dvh;
+  grid-template-rows: 10dvh 90dvh;
   background-color: #f2f2f2;
 }
 
@@ -122,13 +135,13 @@ body {
 }
 
 .item-table {
+  box-sizing: border-box;
   table-layout: fixed;
   border-collapse: collapse;
   text-align: left;
   border-radius: 12px;
   grid-row: 2/-1;
   grid-column: 2/-1;
-  overflow-y: auto;
 }
 .item-table thead {
   border-radius: 12px;
@@ -179,6 +192,7 @@ body {
 
 .submit-btn {
   padding: 0.5rem 1rem;
+  background-color: transparent;
   border-color: #baf241;
   border-radius: 7px;
   border-width: 1px;

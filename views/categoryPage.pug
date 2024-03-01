@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    .ovf-scroll-y.mg-inl-s
+        .header.mg-tb-m
+            h1.font-xl.mg-tb-s #{category.name}
+
+            a.submit-btn(href=category.url + "/update") Edit
+
+            form(action=category.url + "/delete", method="POST").mg-inl-m
+                button.submit-btn(type="submit") Delete
+
+        table.item-table.w-100.h-100
+            thead
+                th.pd-s ITEM NAME
+                th.pd-s ITEM CATEGORY
+                th.pd-s ITEM PRICE
+                th.pd-s ITEM STOCK
+                th.pd-s ITEM SOLD AMOUNT
+            each item in items
+                tr.mg-inl-m
+                    td
+                        a(href=item.url) #{ item.name }
+                    td #{ item.category }
+                    td #{ item.price }
+                    td #{ item.stock }
+                    td #{ item.sold } 

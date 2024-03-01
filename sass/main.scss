@@ -5,6 +5,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 a {
@@ -23,7 +24,7 @@ body {
 .main-container {
 	display: grid;
 	grid-template-columns: 15dvw 85dvw;
-	grid-template-rows: 20dvh 80dvh;
+	grid-template-rows: 10dvh 90dvh;
 	background-color: variables.$bg;
 }
 
@@ -42,14 +43,13 @@ body {
 }
 
 .item-table {
+	box-sizing: border-box;
 	table-layout: fixed;
 	border-collapse: collapse;
 	text-align: left;
 	border-radius: 12px;
 	grid-row: 2 / -1;
 	grid-column: 2 / -1;
-
-	overflow-y: auto;
 
 	thead {
 		border-radius: 12px;
@@ -76,6 +76,7 @@ body {
 	align-self: flex-start;
 	min-width: max(120px, 60%);
 }
+
 
 .user {
 	display: flex;
